@@ -4,7 +4,6 @@ import { selectSong } from '../actions';
 
 const matchStateToProps = (state) => {
     //this will pass as props in will call function
-    console.log(state);
     return {
         songs: state.songs
     };
@@ -27,7 +26,9 @@ export default connect(matchStateToProps, { selectSong })(
                                 </button>
                         </div>
 
-                        <div className="content">{song.title}</div>
+                        <div className="content">
+                            {song.title}
+                        </div>
                     </div>
                 )
             })

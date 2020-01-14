@@ -1,5 +1,6 @@
 import React from 'react';
 import SongList from './SongList';
+import SongDetail from './SongDetail';
 
 export default function App() {
 
@@ -13,8 +14,8 @@ export default function App() {
                     <SongList />
                 </div>
 
-                <div className="column four wide">
-                    <p>selected song</p>
+                <div className="column eight wide">
+                    <SongDetail />
                 </div>
             </div>
 
