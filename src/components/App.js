@@ -14,7 +14,7 @@ export default function App() {
                 </div>
 
                 <div className="column four wide">
-
+                    <p>selected song</p>
                 </div>
             </div>
 
