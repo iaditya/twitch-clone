@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-export default connect(
-    (state) => {
-        return {
-            songs: state.songs
-        };
-        //this will pass as props in will call function
-    })
+const matchStateToProps = (state) => {
+    //this will pass as props in will call function
+    return {
+        songs: state.songs
+    };
+}
 
-    (class SongList extends Component {
+export default connect(matchStateToProps)(
+
+    class SongList extends Component {
 
         render() {
             console.log("SongList renders");
@@ -20,5 +21,6 @@ export default connect(
                 </div>
             );
         }
-    });
+    }
+);
 
