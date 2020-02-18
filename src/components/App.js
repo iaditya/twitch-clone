@@ -1,19 +1,7 @@
-import React from "react";
-import SongList from "../components/SongList";
-import SongDetail from "./SongDetail";
+import React, { Component } from "react";
 
-export default function App() {
-  return (
-    <div className="ui container grid">
-      <div className="ui row">
-        <div className="column eight wide">
-          <SongList />
-        </div>
-
-        <div className="column eight wide">
-          <SongDetail />
-        </div>
-      </div>
-    </div>
-  );
+export default class App extends Component {
+  render() {
+    return <div>App</div>;
+  }
 }
