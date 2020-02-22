@@ -4,13 +4,18 @@ import { connect } from "react-redux";
 import { fetchPosts } from "../actions";
 
 class PostList extends Component {
-    
   componentDidMount() {
     this.props.fetchPosts();
+    
   }
 
   render() {
-    return <div>PostList</div>;
+    console.log(this.props.posts);
+    return (
+      <div>
+        PostList: {this.props.posts ? this.props.posts.length : 0}
+      </div>
+    );
   }
 }
 
