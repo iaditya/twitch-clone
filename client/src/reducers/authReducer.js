@@ -1,13 +1,13 @@
 const INTIAL_STATE = {
-  isLoggedIn: null
+  isSignedIn: null
 };
 
 export default (state = INTIAL_STATE, action) => {
   switch (action.type) {
     case "SIGN_IN":
-      return { ...state, isLoggedIn: true };
+      return { ...state, isSignedIn: true };
     case "SIGN_OUT":
-      return { ...state, isLoggedIn: false };
+      return { ...state, isSignedIn: false };
     default:
       return state;
   }
