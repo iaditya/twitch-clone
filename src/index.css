@@ -1,0 +1,47 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-family: Karla, sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.col {
+  flex: 1 0 0;
+}
+.col-1-of-4,
+.col-2-of-4,
+.col-3-of-4,
+.col-4-of-4 {
+  flex: 0 0 auto;
+}
+
+.col-1-of-4 {
+  width: 25%;
+}
+.col-2-of-4 {
+  width: 50%;
+}
+.col-3-of-4 {
+  width: 75%;
+}
+.col-4-of-4 {
+  width: 100%;
+}
