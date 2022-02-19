@@ -8,6 +8,7 @@
 
 html {
   font-family: Karla, sans-serif;
+  color: #333333;
 }
 
 body {
@@ -17,6 +18,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px 5px;
 }
 
 .row {
@@ -44,4 +46,54 @@ body {
 }
 .col-4-of-4 {
   width: 100%;
+}
+
+.songs-list {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.song-detail {
+  padding: 10px 50px;
+}
+
+.song {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: whitesmoke;
+  border-radius: 4px;
+}
+
+.song-title {
+  font-size: 22px;
+  font-weight: 600;
+  user-select: none;
+}
+
+.btn {
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  padding: 7px 15px;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.btn:hover {
+  color: #212529;
+}
+.song-btn {
+  background-color: lightblue;
+}
+
+.song-btn:hover {
+  background-color: skyblue;
 }
