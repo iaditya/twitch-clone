@@ -98,6 +98,6 @@ body {
   color: black;
 }
 
-.menu-items.right {
+.menu-items.right:first-of-type {
   margin-left: auto;
 }
