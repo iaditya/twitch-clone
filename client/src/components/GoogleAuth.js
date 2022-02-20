@@ -13,7 +13,6 @@ export default function GoogleAuth() {
         .init({ clientId: GOOGLE_CLIENT_ID, scope: "email" })
         .then(() => {
           auth.current = window.gapi.auth2.getAuthInstance();
-          console.log("Auth", auth);
           setSignedIn(auth.current.isSignedIn.get());
           auth.current.isSignedIn.listen(() => {
             setSignedIn(auth.current.isSignedIn.get());
