@@ -18,7 +18,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 5px;
+  height: inherit;
 }
 
 .row {
@@ -48,32 +48,6 @@ body {
   width: 100%;
 }
 
-.songs-list {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.song-detail {
-  padding: 10px 50px;
-}
-
-.song {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: whitesmoke;
-  border-radius: 4px;
-}
-
-.song-title {
-  font-size: 22px;
-  font-weight: 600;
-  user-select: none;
-}
-
 .btn {
   color: #333333;
   cursor: pointer;
@@ -90,10 +64,40 @@ body {
 .btn:hover {
   color: #212529;
 }
-.song-btn {
+.primary-btn {
   background-color: lightblue;
 }
 
-.song-btn:hover {
+.primary-btn:hover {
   background-color: skyblue;
+}
+
+.header {
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  box-shadow: 1px 1px 5px lightgray;
+}
+
+.menu {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu-items {
+  align-self: center;
+  margin-right: 30px;
+}
+.menu-items a {
+  text-decoration: none;
+  /* color: inherit; */
+}
+.menu-items a:active {
+  color: black;
+}
+
+.menu-items.right {
+  margin-left: auto;
 }
