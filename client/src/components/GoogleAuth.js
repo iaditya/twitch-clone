@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { connect } from "react-redux";
 import { signIn, signOut } from "../actions";
 
-function GoogleAuth({ signIn, signOut, auth }) {
+function GoogleAuth({ signIn, signOut, isSignedIn }) {
   const GOOGLE_CLIENT_ID =
     "75253675905-hl0mth765qqtl74sca722vq6r8c1aohi.apps.googleusercontent.com";
   let authObj = useRef(0);
@@ -10,7 +10,7 @@ function GoogleAuth({ signIn, signOut, auth }) {
   const onAuthChange = React.useCallback(
     (isSignedIn) => {
       if (isSignedIn) {
-        signIn();
+        signIn(authObj.current.currentUser.get().getId());
       } else {
         signOut();
       }
@@ -36,9 +36,9 @@ function GoogleAuth({ signIn, signOut, auth }) {
   const signOutClick = () => authObj.current.signOut();
 
   function renderAuthButton() {
-    if (auth.isSignedIn === null) {
+    if (isSignedIn === null) {
       return null;
-    } else if (auth.isSignedIn) {
+    } else if (isSignedIn) {
       return (
         <button onClick={signOutClick} className="btn btn-secondary">
           Sign out
@@ -57,8 +57,7 @@ function GoogleAuth({ signIn, signOut, auth }) {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
-  return { auth: state.auth };
+  return { isSignedIn: state.auth.isSignedIn };
 }
 
 export default connect(mapStateToProps, { signIn, signOut })(GoogleAuth);
