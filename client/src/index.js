@@ -10,6 +10,8 @@ import App from "./components/App";
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware()));
 
+//http://localhost:3000?debug_session=qaz -> This allows we page to keep the app redux state if you reload the page.
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
