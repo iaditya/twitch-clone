@@ -12,11 +12,13 @@ export default function App() {
     <div>
       <BrowserRouter>
         <Header />
-        <Route path="/" exact component={StreamList} />
-        <Route path="/streams/new" exact component={StreamCreate} />
-        <Route path="/streams/show" exact component={StreamShow} />
-        <Route path="/streams/edit" exact component={StreamEdit} />
-        <Route path="/streams/delete" exact component={StreamDelete} />
+        <div className="container">
+          <Route path="/" exact component={StreamList} />
+          <Route path="/streams/new" exact component={StreamCreate} />
+          <Route path="/streams/show" exact component={StreamShow} />
+          <Route path="/streams/edit" exact component={StreamEdit} />
+          <Route path="/streams/delete" exact component={StreamDelete} />
+        </div>
       </BrowserRouter>
     </div>
   );
