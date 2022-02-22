@@ -167,3 +167,34 @@ small {
 .menu-items.right:nth-child(2) {
   margin-left: auto;
 }
+
+.streams {
+  color: #333333;
+  margin-top: 2em;
+}
+.streams h2 {
+  margin-bottom: 1em;
+}
+
+.stream-card {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 3px var(--secondary-light);
+  margin-bottom: 1em;
+}
+
+.stream-card .icon {
+  padding: 0.5em 1em;
+  font-size: 25px;
+  color: var(--primary-dark);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content .name {
+  font-size: 18px;
+}
