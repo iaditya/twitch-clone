@@ -3,6 +3,8 @@
   --primary-light: #94b49f;
   --secondary-dark: #b4cfb0;
   --secondary-light: #e5e3c9;
+
+  --danger: orangered;
 }
 
 *,
@@ -20,6 +22,10 @@ html {
 
 body {
   box-sizing: border-box;
+}
+
+small {
+  margin: 5px 0;
 }
 
 .container {
@@ -53,6 +59,10 @@ body {
 }
 .col-4-of-4 {
   width: 100%;
+}
+
+.text-danger {
+  color: var(--danger);
 }
 
 .btn {
@@ -100,15 +110,16 @@ body {
 }
 .form label {
   font-size: 1em;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 .form > * {
-  margin-top: 1em;
+  margin-bottom: 1em;
 }
 .form .field {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 .form input[type="text"] {
   color: #333333;
@@ -120,6 +131,10 @@ body {
   border-radius: 0.25em;
   border: 1px solid var(--secondary-light);
   outline: none;
+}
+
+.field.error > input[type="text"] {
+  border-color: var(--danger);
 }
 
 .header {
