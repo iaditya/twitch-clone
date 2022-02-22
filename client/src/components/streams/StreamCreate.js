@@ -10,7 +10,6 @@ class StreamCreate extends React.Component {
   };
 
   renderInput = (formProps) => {
-    console.log(formProps.meta);
     return (
       <div
         className={`field ${
