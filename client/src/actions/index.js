@@ -37,8 +37,12 @@ export const fetchStream = (id) => {
 };
 
 export const createStream = (streamObj) => {
-  return async function (dispatch) {
-    const resp = await streams.post("streams", streamObj);
+  return async function (dispatch, getState) {
+    const { userId } = getState().auth;
+    const resp = await streams.post("streams", {
+      ...streamObj,
+      userId: userId,
+    });
     dispatch({ type: CREATE_STREAM, payload: resp.data });
   };
 };
