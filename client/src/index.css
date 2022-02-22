@@ -28,6 +28,15 @@ small {
   margin: 5px 0;
 }
 
+a {
+  text-decoration: none;
+  user-select: none;
+  color: inherit;
+}
+a:active {
+  color: #333333;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -197,4 +206,15 @@ small {
 
 .content .name {
   font-size: 18px;
+}
+.actions {
+  margin-left: auto;
+}
+.actions > * {
+  margin-left: 10px;
+}
+.create-stream {
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
 }
