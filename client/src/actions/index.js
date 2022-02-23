@@ -44,6 +44,7 @@ export const createStream = (streamObj) => {
       userId: userId,
     });
     dispatch({ type: CREATE_STREAM, payload: resp.data });
+    // todo redirects to streams page
   };
 };
 
