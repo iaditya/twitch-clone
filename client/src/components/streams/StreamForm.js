@@ -28,7 +28,7 @@ class StreamForm extends React.Component {
   render() {
     return (
       <form
-        onSubmit={this.props.handleSubmit(this.onSubmitHandler)}
+        onSubmit={this.props.handleSubmit(this.onSubmitHandler)} //this.props.handleSubmit & initialValues[this comes from edit page] is part of redux-form
         className="form"
       >
         <Field name="name" component={this.renderInput} label="Name" />
@@ -54,4 +54,5 @@ const validateForms = (formValues) => {
 export default reduxForm({
   form: "StreamForm",
   validate: validateForms,
+  enableReinitialize: true,
 })(StreamForm);

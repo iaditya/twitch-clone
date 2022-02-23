@@ -51,8 +51,9 @@ export const createStream = (streamObj) => {
 
 export const editStream = (id, streamObj) => {
   return async function (dispatch) {
-    const resp = await streams.put(`streams/${id}`, streamObj);
+    const resp = await streams.patch(`streams/${id}`, streamObj);
     dispatch({ type: EDIT_STREAM, payload: resp.data });
+    history.push("/");
   };
 };
 

@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { fetchStreams } from "../../actions";
 
 const StreamList = ({ fetchStreams, streams, currentUserId, isSignedIn }) => {
-  console.log(streams);
   React.useEffect(() => {
     console.log("StreamList use effect");
     fetchStreams();
