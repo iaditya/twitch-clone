@@ -20,6 +20,12 @@
       "description": "userId",
       "userId": "108130139525577566790",
       "id": 4
+    },
+    {
+      "name": "check custom navigation",
+      "description": "programmatic navigation with custom history object.",
+      "userId": "108130139525577566790",
+      "id": 5
     }
   ]
 }

@@ -8,6 +8,7 @@ import {
   FETCH_STREAMS,
 } from "./types";
 import streams from "../apis/streams";
+import history from "../history";
 
 export const signIn = (userId) => {
   return {
@@ -44,7 +45,7 @@ export const createStream = (streamObj) => {
       userId: userId,
     });
     dispatch({ type: CREATE_STREAM, payload: resp.data });
-    // todo redirects to streams page
+    history.push("/");
   };
 };
 
