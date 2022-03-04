@@ -8,15 +8,12 @@ const Modal = (props) => {
       <div onClick={(e) => e.stopPropagation()} className="modal-dialog">
         <div className="modal-content">
           <div className="modal-header">
-            <h3>Delete Stream</h3>
+            <h3>{props.title}</h3>
           </div>
           <div className="modal-body">
-            <p>Are you sure you want to delete this stream - name</p>
+            <p>{props.content}</p>
           </div>
-          <div className="modal-footer">
-            <button className="btn btn-primary">Confirm</button>
-            <button className="btn btn-secondary">Cancel</button>
-          </div>
+          <div className="modal-footer">{props.actions}</div>
         </div>
       </div>
     </div>,
