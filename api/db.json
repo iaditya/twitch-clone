@@ -4,24 +4,6 @@
       "name": "with user id",
       "description": "userId - the text has updated",
       "id": 4
-    },
-    {
-      "name": "check custom navigation",
-      "description": "updated == programmatic object.",
-      "userId": "108130139525577566790",
-      "id": 5
-    },
-    {
-      "name": "TEst last",
-      "description": "TEst last adi adi ---- updated -- heyeey",
-      "userId": "108130139525577566790",
-      "id": 6
-    },
-    {
-      "name": "hello adisha",
-      "description": "rani is rock",
-      "userId": "108130139525577566790",
-      "id": 7
     }
   ]
 }
