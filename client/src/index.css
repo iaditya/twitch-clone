@@ -33,6 +33,9 @@ a {
   user-select: none;
   color: inherit;
 }
+a:hover {
+  color: var(--primary-dark);
+}
 a:active {
   color: #333333;
 }

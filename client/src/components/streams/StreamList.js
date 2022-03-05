@@ -34,7 +34,9 @@ const StreamList = ({ fetchStreams, streams, currentUserId, isSignedIn }) => {
           <i className="fa-solid icon fa-camera"></i>
 
           <div className="content">
-            <div className="name">{item.name}</div>
+            <Link to={`/streams/${item.id}`} className="name">
+              {item.name}
+            </Link>
             <div className="description">{item.description}</div>
           </div>
           {renderActionButtons(item)}
