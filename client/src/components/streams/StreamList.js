@@ -29,6 +29,10 @@ const StreamList = ({ fetchStreams, streams, currentUserId, isSignedIn }) => {
 
   const renderList = () => {
     return streams.map((item) => {
+      if (currentUserId && item.userId !== currentUserId) {
+        return null;
+      }
+
       return (
         <div className="stream-card" key={item.id}>
           <i className="fa-solid icon fa-camera"></i>
