@@ -5,6 +5,8 @@ import { fetchStream } from "../../actions";
 
 const StreamShow = ({ match, fetchStream, stream }) => {
   const videoRef = useRef(null);
+  const player = useRef(null);
+
   const streamFetched = !!stream && stream.id;
   let id = match.params.id;
   useEffect(() => {
@@ -12,13 +14,19 @@ const StreamShow = ({ match, fetchStream, stream }) => {
 
     if (streamFetched) {
       console.log("makes player");
-      let player = flv.createPlayer({
+      player.current = flv.createPlayer({
         type: "flv",
         url: `http://localhost:8000/live/${id}.flv`,
       });
-      player.attachMediaElement(videoRef.current);
-      player.load();
+      player.current.attachMediaElement(videoRef.current);
+      player.current.load();
     }
+
+    //will unmount
+    return () => {
+      console.log("I was unmounted");
+      player.current.destroy();
+    };
   }, [id, fetchStream, streamFetched]);
 
   if (!stream) {
