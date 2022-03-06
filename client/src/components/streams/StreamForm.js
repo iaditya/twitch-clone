@@ -1,5 +1,5 @@
 import React from "react";
-import { Field, reduxForm } from "redux-form";
+import { Field, Form } from "react-final-form";
 
 class StreamForm extends React.Component {
   renderError = (meta) => {
@@ -27,32 +27,30 @@ class StreamForm extends React.Component {
 
   render() {
     return (
-      <form
-        onSubmit={this.props.handleSubmit(this.onSubmitHandler)} //this.props.handleSubmit & initialValues[this comes from edit page] is part of redux-form
-        className="form"
-      >
-        <Field name="name" component={this.renderInput} label="Name" />
-        <Field
-          name="description"
-          component={this.renderInput}
-          label="Description"
-        />
-        <button className="btn btn-primary">Submit</button>
-      </form>
+      <Form
+        initialValues={this.props.initialValues}
+        onSubmit={this.onSubmitHandler}
+        validate={(formValues) => {
+          let errors = {};
+          if (!formValues.name) errors.name = "Name is mandatory";
+          if (!formValues.description)
+            errors.description = "Description is mandatory";
+          return errors;
+        }}
+        render={(props) => (
+          <form onSubmit={props.handleSubmit} className="form">
+            <Field name="name" component={this.renderInput} label="Name" />
+            <Field
+              name="description"
+              component={this.renderInput}
+              label="Description"
+            />
+            <button className="btn btn-primary">Submit</button>
+          </form>
+        )}
+      />
     );
   }
 }
 
-const validateForms = (formValues) => {
-  let errors = {};
-  if (!formValues.name) errors.name = "Name is mandatory";
-  if (!formValues.description) errors.description = "Description is mandatory";
-
-  return errors;
-};
-
-export default reduxForm({
-  form: "StreamForm",
-  validate: validateForms,
-  enableReinitialize: true,
-})(StreamForm);
+export default StreamForm;
